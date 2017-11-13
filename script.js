@@ -4,33 +4,25 @@ var clickCount = 0;
 
 function readyNow() {
     // console.log('in readyNow');
-    $('#generateButton').on('click', createDiv);
+    $('.generateButton').on('click', createDiv);
+    $(this).on('click', '.swapButton', changeDivColor);
+    $(this).on('click', '.deleteButton', deleteDiv);
 }
 
 function createDiv() {
     // console.log('in createDiv');
     clickCount++;
-    $('body').append('<div id="generatedDiv">' +
+    $('body').append('<div>' +
     '<p>' + clickCount + '</p>' +
-    '<button id="submitButton">Submit</button>' +
-    '<button id="deleteButton">Delete</button></div>');
-
-
-    $('#submitButton').on('click', changeDivColor);
-    $('#deleteButton').on('click', deleteDiv);
+    '<button class="swapButton">Swap</button>' +
+    '<button class="deleteButton">Delete</button></div>');
     
 }
 
 function changeDivColor() {
-    // console.log('in color change');
-    
-    backgroundColor = "red";
+        $(this).parent().toggleClass('buttonClicked');
+}   
 
-    if (backgroundColor = "red"){
-        $('#generatedDiv').css('background-color', 'yellow');
-    }
-
-}
 
 function deleteDiv() {
     // console.log('in delete');

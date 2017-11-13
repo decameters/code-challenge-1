@@ -1,3 +1,7 @@
-#generatedDiv {
+div {
     background-color: red;
+}
+
+.buttonClicked {
+    background-color: yellow;
 }
